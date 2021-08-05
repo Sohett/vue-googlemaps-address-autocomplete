@@ -10,7 +10,13 @@ This component is build on that Google feature.
 ### Usage
 1. Register on the [Google Maps Platform](https://developers.google.com/maps/documentation/javascript/places-autocomplete) to get an API key from Google.
 2. npm install this package
-3. In your Vue project, globally or locally register this component. Don't forget to define the `googleApiKey` !
+3. In your Vue project, globally or locally register this component.
+
+  **Don't forget to define the `googleApiKey` !**
+  ```
+  Vue.config.globalProperties.googleApiKey = 'yourApiKey';
+  ```
+
   **Globally in main.js**
   ```
   import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
@@ -18,6 +24,7 @@ This component is build on that Google feature.
 
   Vue.config.globalProperties.googleApiKey = 'yourApiKey';
   ```
+
   **Locally in a component.vue**
   ```
   import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
