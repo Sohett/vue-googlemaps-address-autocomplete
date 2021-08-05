@@ -12,8 +12,12 @@ This component is build on that Google feature.
 2. npm install this package
 3. In your Vue project, globally or locally register this component.
 
-  **Don't forget to define the `googleApiKey` !**
+  **Don't forget to define the `$googleApiKey` !**
   ```
+  // Vue 2
+  Vue.prototype.$googleMapsApiKey = 'yourApiKey';
+
+  // Vue 3
   Vue.config.globalProperties.$googleMapsApiKey = 'yourApiKey';
   ```
 
@@ -23,6 +27,8 @@ This component is build on that Google feature.
   Vue.use(AddressAutocomplete);
 
   Vue.config.globalProperties.$googleMapsApiKey = 'yourApiKey';
+  // or
+  Vue.prototype.$googleMapsApiKey = 'yourApiKey';
   ```
 
   **Locally in a component.vue**
