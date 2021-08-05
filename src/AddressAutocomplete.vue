@@ -1,22 +1,35 @@
 <script>
-import { scriptLoader } from './scriptLoader';
-
 export default {
-  mixins: [ scriptLoader ],
-  props: {
-    googleMapsApiKey: {
-      type: String,
-      default: this.googleMapsApiKey
-    },
-  },
   data () {
     return {
       addressAutocompleteRef: 'addressAutocompleteReference',
     };
   },
   methods: {
+    loadScript (src, id = null) {
+      return new Promise(function (resolve, reject) {
+        if (document.querySelector('script[src="' + src + '"]')) {
+          resolve();
+
+          return;
+        }
+
+        const el = document.createElement('script');
+
+        el.type = 'text/javascript';
+        el.async = true;
+        el.src = src;
+        el.id = id;
+
+        el.addEventListener('load', resolve);
+        el.addEventListener('error', reject);
+        el.addEventListener('abort', reject);
+
+        document.head.appendChild(el);
+      });
+    },
     loadGoogleMapsScript () {
-      this.loadScript(`https://maps.googleapis.com/maps/api/js?key=${this.googleMapsApiKey}&libraries=places`)
+      this.loadScript(`https://maps.googleapis.com/maps/api/js?key=${this.$googleMapsApiKey}&libraries=places`)
       .then(() => {
         this.initializeAddressAutocomplete();
       });

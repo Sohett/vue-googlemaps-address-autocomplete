@@ -2,10 +2,17 @@
   "name": "vue-googlemaps-address-autocomplete",
   "version": "1.0.1",
   "description": "Google Maps Address Autocomplete suggests street addresses to users as they type an address into a form. This component aims at integrating this logic seamlessly into your Vue.js project.",
-  "main": "src/index.js",
+  "main": "dist/vue-googlemaps-address-autocomplete.cjs.js",
+  "module": "dist/vue-googlemaps-address-autocomplete.esm.js",
+  "browser": "dist/vue-googlemaps-address-autocomplete.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "GoogleMaps",
     "Address",
@@ -17,5 +24,18 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Sohett/vue-googlemaps-address-autocomplete"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.14"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@vue/compiler-sfc": "^3.1.5",
+    "rollup": "^2.56.0",
+    "rollup-plugin-vue": "^6.0.0"
   }
 }
