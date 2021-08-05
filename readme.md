@@ -12,7 +12,10 @@ This component is build on that Google feature.
 
 2. npm install this package
 https://www.npmjs.com/package/vue-google-maps-address-autocomplete
-`npm i vue-google-maps-address-autocomplete` OR `yarn add vue-google-maps-address-autocomplete`
+
+```npm i vue-google-maps-address-autocomplete```
+OR
+```yarn add vue-google-maps-address-autocomplete```
 
 3. In your Vue project, globally or locally register this component.
 
