@@ -36,9 +36,9 @@ This component is build on that Google feature.
   ```
 
 4. Component is used as such
-  `<address-autocomplete>` component that exposes:
-  1. The `:ref` as `addressAutocompleteRef`. Required!
-  2. A `loadGoogleMapsScript` method to asynchronously load the GoogleMaps script only when you decide it (ie: when user touches the input).
+  - `<address-autocomplete>` component that exposes:
+  - The `:ref` as `addressAutocompleteRef`. Required!
+  - A `loadGoogleMapsScript` method to asynchronously load the GoogleMaps script only when you decide it (ie: when user touches the input).
   ```
   <template>
     <address-autocomplete
