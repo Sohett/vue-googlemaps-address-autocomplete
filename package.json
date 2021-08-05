@@ -5,6 +5,7 @@
   "main": "dist/vue-google-maps-address-autocomplete.cjs.js",
   "module": "dist/vue-google-maps-address-autocomplete.esm.js",
   "browser": "dist/vue-google-maps-address-autocomplete.umd.js",
+  "unpkg": "dist/vue-google-maps-address-autocomplete.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
