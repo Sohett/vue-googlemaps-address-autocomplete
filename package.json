@@ -1,6 +1,6 @@
 {
   "name": "vue-googlemaps-address-autocomplete",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Google Maps Address Autocomplete suggests street addresses to users as they type an address into a form. This component aims at integrating this logic seamlessly into your Vue.js project.",
   "main": "src/index.js",
   "scripts": {
