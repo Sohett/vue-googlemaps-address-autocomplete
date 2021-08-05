@@ -19,7 +19,7 @@ This component is build on that Google feature.
 
   **Globally in main.js**
   ```
-  import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
+  import AddressAutocomplete from 'vue-google-maps-address-autocomplete';
   Vue.use(AddressAutocomplete);
 
   Vue.config.globalProperties.googleApiKey = 'yourApiKey';
@@ -27,7 +27,7 @@ This component is build on that Google feature.
 
   **Locally in a component.vue**
   ```
-  import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
+  import AddressAutocomplete from 'vue-google-maps-address-autocomplete';
   export default {
     ...,
     components: { addressAutocomplete },
