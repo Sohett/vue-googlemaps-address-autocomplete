@@ -1,6 +1,6 @@
 # Googlemaps address autocomplete (Vue.js)
 
-#### Description:
+### Description:
 This vue package aims at helping you to seamlessly integrate the auto-complete feature in a vue project.
 Google API has developped a nice auto-suggests feature that will help users as they type an address into a form.
 This component is build on that Google feature.
@@ -11,14 +11,15 @@ This component is build on that Google feature.
 1. Register on the [Google Maps Platform](https://developers.google.com/maps/documentation/javascript/places-autocomplete) to get an API key from Google.
 2. npm install this package
 3. In your Vue project, globally or locally register this component. Don't forget to define the `googleApiKey` !
+  **Globally in main.js**
   ```
-  // Globally in main.js
   import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
   Vue.use(AddressAutocomplete);
 
   Vue.config.globalProperties.googleApiKey = 'yourApiKey';
-
-  // Locally in a component.vue
+  ```
+  **Locally in a component.vue**
+  ```
   import AddressAutocomplete from 'vue-googlemaps-address-autocomplete';
   export default {
     ...,
@@ -28,6 +29,9 @@ This component is build on that Google feature.
   ```
 
 4. Component is used as such
+  `<address-autocomplete>` component that exposes:
+    a. The `:ref` as `addressAutocompleteRef`. Required!
+    b. A `loadGoogleMapsScript` method to asynchronously load the GoogleMaps script only when you decide it (ie: when user touches the input).
   ```
   <template>
     <address-autocomplete
@@ -50,6 +54,11 @@ This component is build on that Google feature.
 
   <script>
     export default {
+      data () {
+        return {
+          address: {}
+        }
+      },
       ...,
       methods: {
         populateAutocompletedAddress (autocompletedAddress) {
@@ -60,3 +69,7 @@ This component is build on that Google feature.
     }
   </script>
   ```
+
+___
+
+Use with care and enjoy 😉
