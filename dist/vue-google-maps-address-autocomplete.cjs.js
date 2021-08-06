@@ -6,6 +6,14 @@ var script = {
       addressAutocompleteRef: 'addressAutocompleteReference',
     };
   },
+  props: {
+    countryRestrictions: {
+      type: Array,
+      default () {
+        return ['be'];
+      },
+    },
+  },
   methods: {
     loadScript (src, id = null) {
       return new Promise(function (resolve, reject) {
@@ -36,14 +44,15 @@ var script = {
       });
     },
     initializeAddressAutocomplete () {
-      const inputElement = this.$scopedSlots.default()[0].context.$refs[this.addressAutocompleteRef];
+      const refComponent = this.$scopedSlots.default()[0].context.$refs[this.addressAutocompleteRef];
+      const inputElement = Object.values(refComponent?.$children?.[0]?.$refs || refComponent.$refs)[0];
 
       this.autocomplete = new google.maps.places.Autocomplete(
         inputElement,
         { types: ['geocode'] },
       );
 
-      this.autocomplete.setComponentRestrictions({ country: ['be'] });
+      this.autocomplete.setComponentRestrictions({ country: this.countryRestrictions });
 
       this.autocomplete.addListener('place_changed', () => {
         const place = this.autocomplete.getPlace();
@@ -59,7 +68,7 @@ var script = {
           return map;
         }, {});
 
-        this.$emit('udpateAddress', { streetName, streetNumber, zipCode, city });
+        this.$emit('update-address', { streetName, streetNumber, zipCode, city });
       });
     },
   },
