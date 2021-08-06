@@ -93,16 +93,16 @@ _Example of usage_
 </script>
 ```
 
-### Properties & Events
+### Properties & Events:
 
-**Ref**
-___
+**1. Ref**
 It exposes the `addressAutocompleteRef` attribute. This attribute is **required** on your "auto suggest" input with a `:ref` binding. This is the input where the client will start typing and the suggestions from GoogleMaps will show up.
 ```html
 <input v-model="address.streetName" :ref="addressAutocompleteRef">
 ```
-**Props**
 ___
+
+**2. Props**
 This provides the option to restrict the suggestions to specific countries. Props must be passed as a two-character, ISO 3166-1 Alpha-2 compatible country code (i.e. "br", "sg", "fr") in an array.
 - props: `countryRestrictions`
 - Default is: ["be"]
@@ -110,16 +110,16 @@ This provides the option to restrict the suggestions to specific countries. Prop
 ```html
 <input v-model="address.streetName" :country-restrictions="['au', 'nz']">
 ```
-
-**Methods**
 ___
+
+**3. Methods**
 Exposes a `loadGoogleMapsScript` method to asynchronously load the GoogleMaps script. This way, you're in control of when the script is actually loaded (ie: when user touches the input or @mounted).
 ```html
 <input v-model="address.streetName" @input.once="loadGoogleMapsScript">
 ```
-
-**Hook**
 ___
+
+**4. Hook**
 - It exposes the `@updateAddress` hook that is triggered when the user select an option in the available list, passing the `autocompletedAddress`. This will prepopulated the address fields:
   - `streetName`
   - `streetNumber`
@@ -133,7 +133,6 @@ methods: {
   }
 }
 ```
-
 ___
 
 Use with care and enjoy 😉
