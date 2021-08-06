@@ -8,10 +8,13 @@ Google API has developped a nice auto-suggests feature that will help users as t
 
 ![Demo](./assets/google-maps-address-autocomplete-demo.gif)
 
-### Usage
-1. Register on the [Google Maps Platform](https://developers.google.com/maps/documentation/javascript/places-autocomplete) to get an API key from Google and register it in your Google console.
+___
 
-2. npm install this package
+### Usage
+#### 1. Register on Google console
+[Google Maps Platform](https://developers.google.com/maps/documentation/javascript/places-autocomplete) to get an API key from Google.
+
+#### 2. npm install this package
 https://www.npmjs.com/package/vue-google-maps-address-autocomplete
 
 ```bash
@@ -21,7 +24,7 @@ OR
 ```bash
 yarn add vue-google-maps-address-autocomplete
 ```
-3. Define your `$googleApiKey` !
+#### 3. Define your `$googleApiKey` ! Required !
 
 ```js
 // Vue 2
@@ -31,7 +34,7 @@ Vue.prototype.$googleMapsApiKey = 'yourApiKey';
 Vue.config.globalProperties.$googleMapsApiKey = 'yourApiKey';
 ```
 
-4. In your Vue project, globally or locally register this component.
+#### 4. Register globally or locally this component.
 
 **Globally in main.js**
 ```js
@@ -49,7 +52,7 @@ export default {
 };
 ```
 
-5. Component interface:
+#### 5. Component interface:
 The feature is implemented through a wrapper component: `<address-autocomplete>slot</address-autocomplete>`.\
 The component will expose a `slot` giving you the possibility to structure and style your component anyway you want. This package **does not provide any design implementation** as this is purely a **renderless component** that will just provide some JS logic to implement the autosuggest & autocomplete functionalities.
 
@@ -92,15 +95,15 @@ _Example of usage_
   }
 </script>
 ```
+---
 
 ### Properties & Events:
 
-**1. Ref**\
+**1. Ref (required)**\
 It exposes the `addressAutocompleteRef` attribute. This attribute is **required** on your "auto suggest" input with a `:ref` binding. This is the input where the client will start typing and the suggestions from GoogleMaps will show up.
 ```html
 <input v-model="address.streetName" :ref="addressAutocompleteRef">
 ```
-___
 
 **2. Props**\
 This provides the option to restrict the suggestions to specific countries. Props must be passed as a two-character, ISO 3166-1 Alpha-2 compatible country code (i.e. "br", "sg", "fr") in an array.
@@ -110,17 +113,15 @@ This provides the option to restrict the suggestions to specific countries. Prop
 ```html
 <input v-model="address.streetName" :country-restrictions="['au', 'nz']">
 ```
-___
 
 **3. Methods**\
 Exposes a `loadGoogleMapsScript` method to asynchronously load the GoogleMaps script. This way, you're in control of when the script is actually loaded (ie: when user touches the input or @mounted).
 ```html
 <input v-model="address.streetName" @input.once="loadGoogleMapsScript">
 ```
-___
 
-**4. Hook**\
-- It exposes the `@updateAddress` hook that is triggered when the user select an option in the available list, passing the `autocompletedAddress`. This will prepopulated the address fields:
+**4. Hook**\gp
+It exposes the `@updateAddress` hook that is triggered when the user select an option in the available list, passing the `autocompletedAddress`. This will prepopulated the address fields:
   - `streetName`
   - `streetNumber`
   - `zipCode`
