@@ -27,7 +27,7 @@
     "url": "https://github.com/Sohett/vue-googlemaps-address-autocomplete"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.4",
