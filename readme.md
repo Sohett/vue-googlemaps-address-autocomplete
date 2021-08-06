@@ -93,7 +93,9 @@ _Example of usage_
 </script>
 ```
 
-#### Properties & Events
+### Properties & Events
+___
+
 **Ref**
 ___
 It exposes the `addressAutocompleteRef` attribute. This attribute is **required** on your "auto suggest" input with a `:ref` binding. This is the input where the client will start typing and the suggestions from GoogleMaps will show up.
