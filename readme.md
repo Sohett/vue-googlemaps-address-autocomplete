@@ -1,7 +1,7 @@
 # Googlemaps address autocomplete (Vue.js)
 
 ### Description:
-Vue.js package that helps you to seamlessly integrate the "auto suggest" and "autocomplete" feature of Google Maps' API.
+Vue.js package that helps you to seamlessly integrate the "auto suggest" and "autocomplete" feature of Google Maps' API.\
 Google API has developped a nice auto-suggests feature that will help users as they type an address into a form. This component is build on top of that Google feature and will thus:
 - auto-suggest the available address from Google Maps
 - prepopulate the address fields as the user select an address in the list
@@ -50,7 +50,7 @@ export default {
 ```
 
 5. Component interface:
-The feature is implemented through a wrapper component: `<address-autocomplete>slot</address-autocomplete>`.
+The feature is implemented through a wrapper component: `<address-autocomplete>slot</address-autocomplete>`.\
 The component will expose a `slot` giving you the possibility to structure and style your component anyway you want. This package **does not provide any design implementation** as this is purely a **renderless component** that will just provide some JS logic to implement the autosuggest & autocomplete functionalities.
 
 _Example of usage_
