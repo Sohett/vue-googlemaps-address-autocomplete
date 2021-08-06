@@ -61,7 +61,7 @@ _Example of usage_
 <template>
   <address-autocomplete
     v-slot="{ addressAutocompleteRef, loadGoogleMapsScript }"
-    @updateAddress="populateAutocompletedAddress"
+    @update-address="populateAutocompletedAddress"
   >
     // Here comes your code
     <div>
@@ -113,7 +113,7 @@ This provides the option to restrict the suggestions to specific countries. Prop
 ```html
 <address-autocomplete
   v-slot="{ addressAutocompleteRef, loadGoogleMapsScript }"
-  @updateAddress="populateAutocompletedAddress"
+  @update-ddress="populateAutocompletedAddress"
   :country-restrictions="['au', 'nz']"
 >
   <slot></slot>
@@ -127,7 +127,7 @@ Exposes a `loadGoogleMapsScript` [REQUIRED] method to asynchronously load the Go
 ```
 
 **4. Hook**\
-It exposes the `@updateAddress` hook that is triggered when the user select an option in the available list, passing the `autocompletedAddress`. This will prepopulated the address fields:
+It exposes the `@update-address` hook that is triggered when the user select an option in the available list, passing the `autocompletedAddress`. This will prepopulated the address fields:
   - `streetName`
   - `streetNumber`
   - `zipCode`
