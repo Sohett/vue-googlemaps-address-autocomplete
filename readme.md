@@ -94,7 +94,6 @@ _Example of usage_
 ```
 
 ### Properties & Events
-___
 
 **Ref**
 ___
