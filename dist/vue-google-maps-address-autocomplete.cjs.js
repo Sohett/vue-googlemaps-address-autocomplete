@@ -44,14 +44,7 @@ var script = {
       });
     },
     initializeAddressAutocomplete () {
-      const refComponent = this.$scopedSlots.default()[0].context.$refs[this.addressAutocompleteRef];
-
-      let inputElement;
-      if (refComponent.$children && refComponent.$children[0]) {
-        inputElement = Object.values(refComponent.$children[0].$refs)[0];
-      } else {
-        inputElement = refComponent;
-      }
+      const inputElement = this.$scopedSlots.default()[0].context.$refs[this.addressAutocompleteRef];
 
       this.autocomplete = new google.maps.places.Autocomplete(
         inputElement,
