@@ -111,7 +111,13 @@ This provides the option to restrict the suggestions to specific countries. Prop
 - Default is: ["be"]
 - Type: `Array`
 ```html
-<input v-model="address.streetName" :country-restrictions="['au', 'nz']">
+<address-autocomplete
+  v-slot="{ addressAutocompleteRef, loadGoogleMapsScript }"
+  @updateAddress="populateAutocompletedAddress"
+  :country-restrictions="['au', 'nz']"
+>
+  <slot></slot>
+</address-autocomplete>
 ```
 
 **3. Methods**\
