@@ -47,14 +47,11 @@ var script = {
       let inputElement;
       if (refComponent.$children && refComponent.$children[0]) {
         inputElement = Object.values(refComponent.$children[0].$refs)[0];
+      } else if (refComponent.$refs) {
+        inputElement = Object.values(refComponent.$refs)[0];
       } else {
         inputElement = refComponent;
       }
-
-      this.autocomplete = new google.maps.places.Autocomplete(
-        inputElement,
-        { types: ['geocode'] },
-      );
 
       this.autocomplete = new google.maps.places.Autocomplete(
         inputElement,
