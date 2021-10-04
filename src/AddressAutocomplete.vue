@@ -65,6 +65,8 @@ export default {
         const place = this.autocomplete.getPlace();
         const ac = place.address_components;
 
+        if (!ac) return;
+
         const {
           route: streetName,
           street_number: streetNumber = null,
