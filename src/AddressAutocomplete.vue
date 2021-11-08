@@ -45,6 +45,8 @@ export default {
     initializeAddressAutocomplete () {
       const refComponent = this.$scopedSlots.default()[0].context.$refs[this.addressAutocompleteRef];
 
+      if (!refComponent) return;
+
       let inputElement;
       if (refComponent.$children && refComponent.$children[0]) {
         inputElement = Object.values(refComponent.$children[0].$refs)[0];
